@@ -1,11 +1,11 @@
 import { FormControl, List, TextField } from '@material-ui/core';
-import { SettingsInputAntenna, UnsubscribeTwoTone } from '@material-ui/icons';
 import React,{ useState, useEffect } from 'react';
 import styles from "./App.module.css"
 import { db } from "./firebase";
 import AddToPhotosIcon from "@material-ui/icons/AddToPhotos";
 import TaskItem from "./TaskItem";
 import { makeStyles } from "@material-ui/styles"
+import CountdownContainer from "./containers/Countdown";
 
 const useStyles = makeStyles({
   field: {
@@ -35,9 +35,12 @@ const App: React.FC = () => {
     db.collection("tasks").add({title: input});
     setInput("");
   };
+
+  
     
   return (
     <div className= {styles.app__root}>
+      <CountdownContainer />
       <h1>TODOリスト</h1>
       <br/>
       <FormControl>
