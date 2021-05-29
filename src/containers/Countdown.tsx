@@ -1,4 +1,3 @@
-
 import React, {FC, useEffect, useState} from 'react';
 import CountdownComponent from '../components/Countdown';
 
